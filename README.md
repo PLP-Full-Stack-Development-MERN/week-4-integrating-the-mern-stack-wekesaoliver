@@ -1,75 +1,106 @@
-**Week 4: MERN Stack Integration Project**
+# Bookstore Project
 
-**Objective:**
+This is a full-stack MERN (MongoDB, Express, React, Node.js) bookstore application. It provides a simple interface for managing a collection of books, including creating, editing, deleting, and viewing book details.
 
-- Develop a full-stack web application using the MERN stack.
-- Apply backend and frontend integration skills.
-- Practice RESTful API development and consumption.
-- Implement CRUD operations and proper project structuring.
+## Prerequisites
 
-**Project Suggestion:** Build a "Task Manager" application where users can create, read, update, and delete tasks. Each task should include fields like title, description, status, and due date.
+To run this project, you need to have the following installed:
 
-**Instructions:**
+- Node.js
+- npm (Node Package Manager)
+- MongoDB
 
-1. **Setup the Project:**
-   - Create a new project folder called `mern-task-manager`.
-   - Initialize both backend and frontend directories within the project.
-   - Install necessary dependencies such as Express, Mongoose, React, and Axios.
+## Installation
 
-2. **Backend Development:**
-   - Set up an Express server and connect to MongoDB.
-   - Create a `Task` model with the following fields:
-     - `title` (String, required)
-     - `description` (String)
-     - `status` (String, default: 'pending', enum: ['pending', 'in progress', 'completed'])
-     - `dueDate` (Date)
-   - Implement RESTful API routes to:
-     - Create a new task
-     - Retrieve all tasks
-     - Update a task by ID
-     - Delete a task by ID
-   - Use environment variables for database connection.
+1. Clone the repository:
 
-3. **Frontend Development:**
-   - Set up a React project and configure routing.
-   - Create components:
-     - `TaskList` to display all tasks.
-     - `TaskForm` to add or update tasks.
-     - `TaskItem` to show an individual task.
-   - Implement forms to capture task details.
-   - Use Axios to make API requests to the backend.
-   - Implement UI styling using Tailwind CSS.
+   ```bash
+   git clone <repository_url>
+   cd bookstore-project
+   ```
 
-4. **State Management:**
-   - Use React's `useState` and `useEffect` hooks to manage task state.
-   - Handle user interactions such as adding, updating, and deleting tasks.
+2. Install backend dependencies:
 
-5. **Testing:**
-   - Run the backend server and test API endpoints using Postman.
-   - Run the React app and ensure API calls work correctly.
-   - Verify CRUD operations.
+   ```bash
+   cd backend
+   npm install
+   ```
 
-6. **Project Deployment:**
-   - Deploy the backend to a cloud platform such as Render.
-   - Deploy the frontend to Vercel.
-   - Ensure proper connection between frontend and backend.
+3. Install frontend dependencies:
 
-7. **Documentation:**
-   - Write a `README.md` file including:
-     - Project overview
-     - Installation steps
-     - API endpoint documentation
-     - Features and usage guide
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-8. **Submission:**
-   - Push your project to your GitHub repository.
+## Running the Application
 
-**Evaluation Criteria:**
+1. Start the MongoDB server.
 
-- Proper project setup and folder structuring.
-- Working CRUD operations in both frontend and backend.
-- Correct use of React state and hooks.
-- Well-structured API endpoints with appropriate error handling.
-- A functional and user-friendly UI with Tailwind CSS.
-- Clear and concise documentation.
+2. Run the backend server:
 
+   ```bash
+   cd backend
+   npm run dev
+   ```
+
+   This will start the backend server on `http://localhost:5555`.
+
+3. Run the frontend development server:
+
+   ```bash
+   cd ../frontend
+   npm run dev
+   ```
+
+   This will start the frontend server on `http://localhost:3000`.
+
+4. Open your browser and navigate to `http://localhost:3000` to view the application.
+
+## Project Structure
+
+- **backend/**: Contains the Express server code and MongoDB models.
+- **frontend/**: Contains the React application code.
+
+## Key Features
+
+- Add a new book with title, author, and publish year.
+- Edit existing book details.
+- Delete a book from the collection.
+- View a list of all books.
+- View detailed information about a single book.
+
+## Dependencies
+
+### Backend
+
+- express
+- mongoose
+- dotenv
+- cors
+- nodemon (for development)
+
+### Frontend
+
+- react
+- react-dom
+- react-router-dom
+- axios
+- notistack
+- react-icons
+- tailwindcss
+
+## Environment Variables
+
+Create a `.env` file in the `backend` directory and add the following:
+
+```plaintext
+PORT=5555
+MONGO_URL=<your_mongodb_connection_string>
+```
+
+Replace `<your_mongodb_connection_string>` with your MongoDB connection string.
+
+## License
+
+This project is licensed under the ISC License.
